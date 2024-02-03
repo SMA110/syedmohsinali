@@ -50,6 +50,32 @@
             </a>
         </div>          
     </nav><!-- End of Page Navbar -->
+     <!-- page header -->
+     <header id="home" class="header">
+        <div class="overlay"></div>
+        <!-- <div class="header-content container">
+            <h1>Project Detail</h1>
+            <h1 class="header-title">
+                <span class="up">Project Detail</span>                
+            </h1>
+            <p class="header-subtitle">Software Engineer</p>            
+
+             <button class="btn btn-primary">Visit My Works</button> 
+        </div>               -->
+        <section class="container" style="margin-top: -400px;">
+            <h1 class="up">Project Detail</h1>
+            <div id="Project1">
+                <h1>Project 1</h1>
+            </div>
+            <div id="Project2">
+                <h1>Project 2</h1>
+            </div>
+            <div id="Project3">
+                <h1>Project 3</h1>
+            </div>
+        </section>
+    </header><!-- end of page header -->
+
     
     <!-- footer -->
     <div class="container">
@@ -75,5 +101,21 @@
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#Projet1").hide();
+            
+
+
+        });
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('PROJ');
+        if(myParam=="RES"){
+            $("#Projet1").show();
+            $("#Projet2").hide();
+            $("#Projet3").hide();
+        }
+    </script>
     </body>
     </html>
