@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
 	<link rel="stylesheet" href="assets/css/meyawo.css">
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
@@ -53,6 +54,9 @@
      <!-- page header -->
      <header id="home" class="header">
         <div class="overlay"></div>
+        <section class="container" id="section">
+            <h1>Project Detail</h1>    
+        </section>
         <!-- <div class="header-content container">
             <h1>Project Detail</h1>
             <h1 class="header-title">
@@ -62,20 +66,10 @@
 
              <button class="btn btn-primary">Visit My Works</button> 
         </div>               -->
-        <section class="container" style="margin-top: -400px;">
-            <h1 class="up">Project Detail</h1>
-            <div id="Project1">
-                <h1>Project 1</h1>
-            </div>
-            <div id="Project2">
-                <h1>Project 2</h1>
-            </div>
-            <div id="Project3">
-                <h1>Project 3</h1>
-            </div>
-        </section>
+        
     </header><!-- end of page header -->
-
+   
+    
     
     <!-- footer -->
     <div class="container">
@@ -91,31 +85,35 @@
             </div>
         </footer>
     </div> <!-- end of page footer -->
-	
 	<!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
-    <!-- bootstrap 3 affix -->
-	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+<!-- bootstrap 3 affix -->
+<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-    <!-- Meyawo js -->
-    <script src="assets/js/meyawo.js"></script>
-
+<!-- Meyawo js -->
+<script src="assets/js/meyawo.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#Projet1").hide();
+        $(document).ready(function(){            
+            const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('PROJ');
+        if(myParam==='RES'){
+            console.log(myParam==='RES');
+            $("#section").append("<div><h1>Project # 1</h1></div>");
             
+        }else if(myParam==='live'){
+            $("#section").append("<div><h1>Project # 2</h1></div>");
+        }else if(myParam==='KRI'){
+            $("#section").append("<div><h1>Project # 3</h1></div>");
+        }
 
 
         });
-        const urlParams = new URLSearchParams(window.location.search);
-        const myParam = urlParams.get('PROJ');
-        if(myParam=="RES"){
-            $("#Projet1").show();
-            $("#Projet2").hide();
-            $("#Projet3").hide();
-        }
+       
     </script>
+	
+
+  
     </body>
     </html>
